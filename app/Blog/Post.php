@@ -12,11 +12,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $link
  * @property int $post_status_id
  * @property int $actual_revision_id Актуальная в данный момент ревизия
- * @property Carbon $created_at
- * @property Carbon $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  */
 class Post extends Model
 {
+
+    protected $fillable = [
+        'link', 'post_status_id', 'actual_revision_id'
+    ];
 
     function postStatus() {
         return $this->belongsTo(PostStatus::class);

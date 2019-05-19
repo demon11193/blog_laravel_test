@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property string $name
  * @property int $rubric_id
- * @property Carbon $created_at
- * @property Carbon $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  */
 class Rubric extends Model
 {

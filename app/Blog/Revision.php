@@ -16,13 +16,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $name
  * @property string $context
  * @property int|null $user_id
- * @property Carbon $created_at
- * @property Carbon $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  */
 class Revision extends Model
 {
 
     use SoftDeletes;
+
+    protected $fillable = [
+        'post_id', 'rubric_id', 'name', 'context', 'user_id'
+    ];
 
     function user() {
         return $this->belongsTo(User::class);
